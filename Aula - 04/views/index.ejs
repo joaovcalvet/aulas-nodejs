@@ -20,5 +20,9 @@
         <% if(msg){ %>
             <p>Uhhuu segredo!</p>
         <%}%>
+
+        <% produtos.forEach(function(produto) { %>
+            <p><%= produto.nome %>: R$<%= produto.preco%></p>
+        <% }) %>
     </body>
 </html>
