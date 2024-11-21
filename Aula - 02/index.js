@@ -1,5 +1,5 @@
 /*
-    Aula - 02: NPM
+    Aula - 02: NPM e Express
     NPM - Node Package Manager ou Gerenciador de Pacotes do Node
     Utilizado para puxar e instalar pacotes de terceiros para a aplicação/projeto Node,
     além de gerenciar algumas configurações do projeto Node.
@@ -27,9 +27,24 @@
     '''
 */
 
+/*
+    Aula - 02.2: Rotas
+    Rotas são os caminhos para as páginas da sua aplicação web
+*/
+
 const express = require("express"); // Importando o Express
 const app = express(); // Inicializando o Express
 
+//Rotas
+app.get("/", function(req, res) {
+    return res.send("Bem Vindo(a) ao meu Website!");
+});
+
+app.get("/contatos", function(req, res) {
+    return res.send("Você está na página de Contatos.<br>Se desejar, mande um email para: testedeemail@gmail.com")
+})
+
+//Inicializando Servidor
 app.listen(8181, function(error) {
     if(error)
     {
