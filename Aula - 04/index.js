@@ -26,6 +26,9 @@
     Sintaxa para renderizar variáveis na view:
     <% (variável) %> - Para estruturas de controle (if, else, foreach);
     <%= (variável) %> - Para printar a variável no console ou página.
+
+    Aula - 04.3: Estruturas Condicionais
+    If, else e else if
 */
 
 const express = require('express');
