@@ -56,6 +56,9 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 
     P.S: Dependências passivo de mudança, verificar antes de subir.
+
+    Aula - 04.7: Criando Formulário de Perguntas
+    Criando o formulário de perguntas no frontend com bootstrap.
 */
 
 const express = require('express'); //Importando o Express
