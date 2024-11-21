@@ -32,17 +32,54 @@
     Rotas são os caminhos para as páginas da sua aplicação web
 */
 
+/*
+    Aula - 02.3: Carregamento Automático
+    Para acabar com a reinicialização manual do servidor no nosso projeto, podemos utilizar
+    um pacote NodeJS chamado "nodemon" através do comando "npm install nodemon -g"
+
+    Sobre a opção "-g"
+    Essa opção é utilizada para instalar um módulo globalmente. Ou seja, ele ficará instalaado
+    na máquina e não no projeto. Dessa forma, você tem acesso ao módulo apenas utilizando o comando:
+    "nodemon (nome do arquivo a ser rodado)".
+*/
+
+/*
+    Aula - 02.4: Parâmetros
+    Forma de passar valores dinâmicos a uma rota.
+*/
+
 const express = require("express"); // Importando o Express
 const app = express(); // Inicializando o Express
 
 //Rotas
+/*
+    REQ => DADOS ENVIADOS PELO USUÁRIO
+    RES => RESPOSTA QUE VAI SER ENVIADA PARA O USUÁRIO
+*/
+
+///Home
 app.get("/", function(req, res) {
     return res.send("Bem Vindo(a) ao meu Website!");
 });
 
-app.get("/contatos", function(req, res) {
+///Contato
+app.get("/contato", function(req, res) {
     return res.send("Você está na página de Contatos.<br>Se desejar, mande um email para: testedeemail@gmail.com")
-})
+});
+
+app.get("/contato/:nome", function(req, res) {
+    let nome = req.params.nome;
+    return res.send(`Olá ${nome}! Que bom ter você aqui.`);
+});
+
+///Blog
+app.get("/blog/:autor?", function(req, res) {
+    let autor = req.params.autor;
+
+    if(autor)
+        return res.send(`O autor desse blog se chama ${autor}.`);
+    return res.send("Você está na página do Blog!");
+});
 
 //Inicializando Servidor
 app.listen(8181, function(error) {
