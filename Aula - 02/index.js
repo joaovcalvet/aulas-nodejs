@@ -48,6 +48,10 @@
     Forma de passar valores dinâmicos a uma rota.
 */
 
+/*
+    Aula - 02.5: Query Params
+*/
+
 const express = require("express"); // Importando o Express
 const app = express(); // Inicializando o Express
 
@@ -79,6 +83,18 @@ app.get("/blog/:autor?", function(req, res) {
     if(autor)
         return res.send(`O autor desse blog se chama ${autor}.`);
     return res.send("Você está na página do Blog!");
+});
+
+///Canal
+app.get("/canal", function(req, res) {
+    return res.send("Você está na página de canais!");
+});
+
+app.get("/canal/:autor", function(req, res) {
+    if(Object.keys(req.query).length > 0)
+        return res.send(`Você está no canal ${req.params.autor} assistindo ao video ${req.query["video"]}`);
+
+    return res.send("Você está na home do canal " + req.params.autor);
 });
 
 //Inicializando Servidor
