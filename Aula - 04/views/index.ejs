@@ -3,27 +3,14 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
         <title>Projeto Q&A</title>
     </head>
-
+        <h1>Teste Bootstrap</h1>
     <body>
-        <h1>Projeto Perguntas e Respostas!</h1>
-        <p>Não temos nenhuma pergunta no momento, então segure as suas respostas.</p>
 
-        <h3>Listando</h3>
-        <ul>
-            <li><%= nome %></li>
-            <li><%= lang %></li>
-            <li><%= empresa %></li>
-            <li><%= inscritos %></li>
-        </ul>
-
-        <% if(msg){ %>
-            <p>Uhhuu segredo!</p>
-        <%}%>
-
-        <% produtos.forEach(function(produto) { %>
-            <p><%= produto.nome %>: R$<%= produto.preco%></p>
-        <% }) %>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="/js/bootstrap.min.js"></script>
     </body>
 </html>

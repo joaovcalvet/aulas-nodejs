@@ -43,6 +43,19 @@
 
     Estamos tornando esses arquivos publicos, ou seja, qualquer um terá acesso e poderá ver esses
     conteúdos, então, temos que ter cautela com o que vamos publicar.
+
+    Aula - 04.6: Bootstrap
+    Bootstrap é um framework para HTML que auxilia na construção de páginas web.
+    Ele ajuda na criação de interfaces rapidamente.
+
+    Podemos baixar o Bootstrap no seguinte link:
+    https://getbootstrap.com/docs/4.5/getting-started/download/
+
+    Importar dependências antes de importar o arquivo do bootstrap.
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+
+    P.S: Dependências passivo de mudança, verificar antes de subir.
 */
 
 const express = require('express'); //Importando o Express
@@ -51,23 +64,9 @@ const app = express(); // Inicializando o Express na Variável "app"
 app.set("view engine", "ejs"); //Settando o motor de visualização
 app.use(express.static('public')); // Settando e Expondo a pasta de arquivos estáticos
 
-app.get("/:nome?/:lang?", function(req, res) {
-
-    produtos = [
-        {nome: "doritos", preco: 2.45},
-        {nome: "ruffles", preco: 3.01}
-    ]
-
-    responseObj = {
-        nome: req.params.nome,
-        lang: req.params.lang,
-        empresa: "ferragens ramada",
-        inscritos: 8000,
-        produtos,
-        msg: false
-    }
-
-    return res.render("index.ejs", responseObj);
+//Rotas
+app.get("/", function(req, res) {
+    return res.render("index.ejs");
 });
 
 app.listen(8181, function(error) {
