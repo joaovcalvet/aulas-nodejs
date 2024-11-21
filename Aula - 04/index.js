@@ -32,11 +32,24 @@
 
     Aula - 04.4: Estrutura de Repetição
     Foreach
+
+    Aula - 04.5: Arquivos Estáticos
+    Arquivos estáticos são aqueles são entregues ao client sem que sejam processados pelo backend.
+    Ex: Javascript no HTML, imagens, CSS e etc...
+
+    Criar pasta "public" (convenção de nome) para arquivos estáticos.
+    Settar essa pasta como estática utilizando o comando:
+    "app.use(express.static('public'))"
+
+    Estamos tornando esses arquivos publicos, ou seja, qualquer um terá acesso e poderá ver esses
+    conteúdos, então, temos que ter cautela com o que vamos publicar.
 */
 
-const express = require('express');
-const app = express();
-app.set("view engine", "ejs");
+const express = require('express'); //Importando o Express
+const app = express(); // Inicializando o Express na Variável "app"
+
+app.set("view engine", "ejs"); //Settando o motor de visualização
+app.use(express.static('public')); // Settando e Expondo a pasta de arquivos estáticos
 
 app.get("/:nome?/:lang?", function(req, res) {
 
