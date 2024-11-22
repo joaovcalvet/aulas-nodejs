@@ -1,4 +1,7 @@
 body {
-    color: white;
-    background-color: rgb(16, 17, 63);
+    background-color: rgb(23, 24, 61);
+}
+
+#formulario-pergunta {
+    margin-top: 5vh;
 }

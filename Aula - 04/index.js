@@ -56,24 +56,33 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 
     P.S: Dependências passivo de mudança, verificar antes de subir.
+    P.S: Ao usar estilos próprios, importa-los após o link com o bootstrap.
 
     Aula - 04.7: Criando Formulário de Perguntas
     Criando o formulário de perguntas no frontend com bootstrap.
     Transformando ele em um card.
-    
+    Ajeitando CSS.
 */
 
 const express = require('express'); //Importando o Express
+const compression = require('compression'); //Importando o pacote Compression
 const app = express(); // Inicializando o Express na Variável "app"
 
+//Configurações
 app.set("view engine", "ejs"); //Settando o motor de visualização
+app.use(compression({threshold: 2048})); //Aplicando compressão para melhorar a performance da página
 app.use(express.static('public')); // Settando e Expondo a pasta de arquivos estáticos
 
 //Rotas
 app.get("/", function(req, res) {
-    return res.render("index.ejs");
+    return res.send("Você está na Home!");
 });
 
+app.get("/perguntar", function(req, res) {
+    return res.render("index.ejs");
+})
+
+//Servindo Aplicação
 app.listen(8181, function(error) {
     if(error)
         return console.log(`Ocorreu um erro ao inicializar o servidor: ${error}`);
