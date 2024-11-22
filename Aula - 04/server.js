@@ -91,6 +91,9 @@
     por fazer mais sentido, além de também estar dando problemas com a ordem da injeção das dependências.
 
     Com o model, já estou conseguindo inserir itens no banco.
+
+    Aula - 04.10: Listando perguntas
+    Criado uma tela nova para listar todas as perguntas do banco.
 */
 
 const express = require('express'); //Importando o Express

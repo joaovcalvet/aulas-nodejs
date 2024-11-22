@@ -5,7 +5,7 @@ module.exports = {
 
         let pageContent = {
             page: "pages/perguntar.ejs",
-            title: "Projeto Q&A - Perguntas"
+            title: "Projeto Q&A - Perguntar"
         }
 
         return res.render("default.ejs", pageContent);
@@ -13,8 +13,14 @@ module.exports = {
 
     getAllQuestions: function(req, res) {
 
+        let pageContent = {
+            page: "pages/perguntas.ejs",
+            title: "Projeto Q&A - Perguntas"
+        }
+
         Question.findAll().then((questions) => {
-            return res.send(questions);
+            pageContent.questions = questions;
+            return res.render("default.ejs", pageContent);
         });
     },
 

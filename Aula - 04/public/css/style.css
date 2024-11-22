@@ -2,10 +2,15 @@ body {
     background-color: rgb(23, 24, 61);
 }
 
-#home {
+.site-navbar {
+    margin-bottom: 5vh;
+}
+
+.container-dark-mode .top-content {
     color: white;
 }
 
-#formulario-pergunta {
-    margin-top: 5vh;
+.page-select {
+    display: flex;
+    gap: 24px;
 }
