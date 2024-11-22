@@ -70,41 +70,32 @@
     Houveram mudanças no método para fazer include.
     Antes: <%- include partials/header.ejs %>
     Agora: <%- include('partials/header.ejs') %>
+
+    Aula - 04.8: Capturando Dados do Formulário
+    Caapturar dados vindo do corpo da requisição.
+    Foi instruido na aula a utilizar uma biblioteca separada, porém, após pesquisa
+    descobri que essa biblioteca está defasada e que a mesma foi incorporada ao módulo
+    padrão do Express.
+
+    Aproveitei também para reestruturar o projeto, separando em conceitos de rotas e controllers.
 */
 
 const express = require('express'); //Importando o Express
 const compression = require('compression'); //Importando o pacote Compression
+const routes = require('./configs/routes');
 const app = express(); // Inicializando o Express na Variável "app"
 
 //Configurações
 app.set("view engine", "ejs"); //Settando o motor de visualização
-app.use(compression({threshold: 2048})); //Aplicando compressão para melhorar a performance da página
+app.use(routes);
+app.use(express.json());
 app.use(express.static('public')); // Settando e Expondo a pasta de arquivos estáticos
-
-//Rotas
-app.get("/", function(req, res){
-
-    let pageContent = {
-        page: "pages/index.ejs",
-        title: "Projeto Q&A - Home"
-    }
-
-    return res.render("default.ejs", pageContent);
-});
-
-app.get("/perguntar", function(req, res) {
-
-    let pageContent = {
-        page: "pages/perguntar.ejs",
-        title: "Projeto Q&A - Perguntas"
-    }
-
-    return res.render("default.ejs", pageContent);
-})
+app.use(compression({ threshold: 2048 })); //Aplicando compressão para melhorar a performance da página
+app.use(express.urlencoded({ extended:true }));
 
 //Servindo Aplicação
 app.listen(8181, function(error) {
     if(error)
         return console.log(`Ocorreu um erro ao inicializar o servidor: ${error}`);
     console.log("Servidor Inicializado")
-})
+});
