@@ -94,6 +94,8 @@
 
     Aula - 04.10: Listando perguntas
     Criado uma tela nova para listar todas as perguntas do banco.
+
+    Aula - 04.11: Ordenação com Sequelize
 */
 
 const express = require('express'); //Importando o Express

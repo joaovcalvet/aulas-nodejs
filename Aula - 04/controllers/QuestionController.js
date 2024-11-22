@@ -18,7 +18,8 @@ module.exports = {
             title: "Projeto Q&A - Perguntas"
         }
 
-        Question.findAll().then((questions) => {
+        Question.findAll({raw:true, order: [['createdAt', 'DESC']]}).then((questions) => {
+            console.log(questions);
             pageContent.questions = questions;
             return res.render("default.ejs", pageContent);
         });
