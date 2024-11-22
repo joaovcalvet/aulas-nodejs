@@ -1,6 +1,9 @@
 const express = require('express');
 const router = express.Router();
 
+router.use(express.json());
+router.use(express.urlencoded({ extended:true }));
+
 //Controllers
 const question = require('../controllers/QuestionController.js');
 
@@ -16,6 +19,7 @@ router.get("/", function(req, res){
 });
 
 router.get("/perguntar", question.index);
-router.post("/salvarpergunta", question.createQuestion);
+router.get("/perguntas", question.getAllQuestions);
+router.post("/perguntar", question.createQuestion);
 
 module.exports = router;

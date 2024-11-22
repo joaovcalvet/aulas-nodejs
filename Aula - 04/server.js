@@ -78,20 +78,35 @@
     padrão do Express.
 
     Aproveitei também para reestruturar o projeto, separando em conceitos de rotas e controllers.
+
+    Aula - 04.9: Banco de Dados
+    Criando um banco de dados para armazenar as perguntas.
+    Na aula, o professor utiliza MySQL para o banco, porém, estou usando sqlite para facilitar minha vida.
+
+    Um pacote chamado "Sequelize" foi adicionado junto com sua biblioteca do sqlite3.
+    "npm install sequelize --save"
+    "npm install sqlite3 --save"
+
+    Criado um model para as perguntas; Algumas configurações foram passadas para o arquivo de rotas
+    por fazer mais sentido, além de também estar dando problemas com a ordem da injeção das dependências.
+
+    Com o model, já estou conseguindo inserir itens no banco.
 */
 
 const express = require('express'); //Importando o Express
 const compression = require('compression'); //Importando o pacote Compression
 const routes = require('./configs/routes');
+const connection = require('./configs/database');
 const app = express(); // Inicializando o Express na Variável "app"
+
+//Database
+connection.authenticate();
 
 //Configurações
 app.set("view engine", "ejs"); //Settando o motor de visualização
-app.use(routes);
-app.use(express.json());
 app.use(express.static('public')); // Settando e Expondo a pasta de arquivos estáticos
 app.use(compression({ threshold: 2048 })); //Aplicando compressão para melhorar a performance da página
-app.use(express.urlencoded({ extended:true }));
+app.use(routes);
 
 //Servindo Aplicação
 app.listen(8181, function(error) {
