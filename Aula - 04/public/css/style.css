@@ -2,6 +2,10 @@ body {
     background-color: rgb(23, 24, 61);
 }
 
+#home {
+    color: white;
+}
+
 #formulario-pergunta {
     margin-top: 5vh;
 }

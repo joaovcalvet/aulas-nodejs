@@ -62,6 +62,14 @@
     Criando o formulário de perguntas no frontend com bootstrap.
     Transformando ele em um card.
     Ajeitando CSS.
+
+    Aula - 04.8: Partials
+    Partials nos permite fazer inclusões de snippets HTML em outros arquivos HTML.
+    Dessa forma, conseguimos manter um código mais organizado e mais componentezado.
+
+    Houveram mudanças no método para fazer include.
+    Antes: <%- include partials/header.ejs %>
+    Agora: <%- include('partials/header.ejs') %>
 */
 
 const express = require('express'); //Importando o Express
@@ -74,12 +82,24 @@ app.use(compression({threshold: 2048})); //Aplicando compressão para melhorar a
 app.use(express.static('public')); // Settando e Expondo a pasta de arquivos estáticos
 
 //Rotas
-app.get("/", function(req, res) {
-    return res.send("Você está na Home!");
+app.get("/", function(req, res){
+
+    let pageContent = {
+        page: "pages/index.ejs",
+        title: "Projeto Q&A - Home"
+    }
+
+    return res.render("default.ejs", pageContent);
 });
 
 app.get("/perguntar", function(req, res) {
-    return res.render("index.ejs");
+
+    let pageContent = {
+        page: "pages/perguntar.ejs",
+        title: "Projeto Q&A - Perguntas"
+    }
+
+    return res.render("default.ejs", pageContent);
 })
 
 //Servindo Aplicação
