@@ -96,6 +96,7 @@
     Criado uma tela nova para listar todas as perguntas do banco.
 
     Aula - 04.11: Ordenação com Sequelize
+    Ordernando pela pergunta mais recente.
 */
 
 const express = require('express'); //Importando o Express
