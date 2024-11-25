@@ -14,4 +14,7 @@
 
     "setTimeout" por exemplo é uma função que recebe um callback, já que o código só ira executar
     após o tempo determinado ter passado.
+
+    Aula - 04.04: Callbacks+
+    Adicionando tratamento de erros e parâmetros ao callback.
 */
