@@ -104,6 +104,14 @@
     Aproveitei para adicionar uma pasta a mais na estrutura das páginas.
 
     Aula - 04.13: Front-end Página de Pergunta
+    Pequenas alterações no Front da página de uma pergunta.
+
+    Aula - 04.14: Perguntas com Links Dinâmicos
+    Adicionado o Link para a página da Pergunta no botão "Responder".
+
+    Aula - 04.15: Model de Resposta
+    Criado o model para resposta.
+    Ele fará uma ligação com o id de uma pergunta.
 */
 
 const express = require('express'); //Importando o Express
