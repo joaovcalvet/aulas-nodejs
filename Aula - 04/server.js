@@ -115,6 +115,10 @@
 
     Aula - 04.16: Formulário de Resposta
     Criado o formulário de resposta para as perguntas no frontend.
+
+    Aula - 04.17: Respondendo Perguntas
+    Nova rota criada para tratar o envio de uma resposta.
+    Resposta é armazenada no banco e linkada a pergunta associada.
 */
 
 const express = require('express'); //Importando o Express

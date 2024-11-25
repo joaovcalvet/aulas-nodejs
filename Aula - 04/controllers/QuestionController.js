@@ -1,4 +1,5 @@
 const Question = require('../database/models/Question.js');
+const Answer = require('../database/models/Answer.js');
 
 module.exports = {
     index: function(req, res) {
@@ -69,5 +70,22 @@ module.exports = {
         });
 
         return res.redirect("/perguntar");
+    },
+
+    createAnswer: function(req, res) {
+
+        let questBody = req.body;
+
+        Answer.create({
+            question_id: questBody.question_id,
+            body: questBody.answer
+        }).then((answer) => {
+
+            if(answer === null)
+                return res.redirect("/");
+
+            return res.redirect(`/pergunta/${questBody.question_id}`);
+        });
+
     }
 }
