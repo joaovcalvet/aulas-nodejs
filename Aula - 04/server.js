@@ -119,6 +119,12 @@
     Aula - 04.17: Respondendo Perguntas
     Nova rota criada para tratar o envio de uma resposta.
     Resposta é armazenada no banco e linkada a pergunta associada.
+
+    Aula - 04.18: Exibindo Resposta no Front
+    Criado a lógica para exibir as respostas no front.
+    Para isso, buscamos no model todas as respostas com o id da pergunta,
+    passamos para a view, que checa se alguma pergunta está sendo retornada.
+    Após a checagem, ela loopa entre as respostas e as carrega na view.
 */
 
 const express = require('express'); //Importando o Express

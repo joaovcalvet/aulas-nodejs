@@ -8,6 +8,16 @@
 
     <br>
 
+    <% if (answers != null) { %>
+        <% answers.forEach(answer => { %>
+            <div class="answer-container">
+                <p><%- answer.body %></p>
+            </div>
+        <% }) %>
+    <% } %>
+
+    <br>
+
     <div class="card">
         <div class="card-body">
             <form action="/perguntar/resposta" method="post">

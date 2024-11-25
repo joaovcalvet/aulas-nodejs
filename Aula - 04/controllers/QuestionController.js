@@ -22,13 +22,21 @@ module.exports = {
             if(question === null)
                 return res.redirect("/perguntas");
 
-            let pageContent = {
-                page: "pages/question/pergunta.ejs",
-                title: "Projeto Q&A - Pergunta",
-                question: question
-            }
+            Answer.findAll({
+              raw: true,
+              where: {question_id: qID},
+              order: [["createdAt", "DESC"]]
+            }).then((answers) => {
 
-            return res.render("default.ejs", pageContent);
+                let pageContent = {
+                    page: "pages/question/pergunta.ejs",
+                    title: "Projeto Q&A - Pergunta",
+                    question: question,
+                    answers: answers
+                }
+    
+                return res.render("default.ejs", pageContent);
+            });
         });
     },
 

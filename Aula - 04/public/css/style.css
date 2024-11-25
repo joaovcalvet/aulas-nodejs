@@ -18,3 +18,15 @@ body {
     display: flex;
     gap: 24px;
 }
+
+.answer-container {
+    background-color: white;
+    padding: 1.25rem;
+    border-radius: .25rem;
+    margin-bottom: 20px;
+}
+
+.answer-container p {
+    margin: 0;
+    font-size: 20px;
+}
