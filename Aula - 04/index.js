@@ -17,4 +17,34 @@
 
     Aula - 04.04: Callbacks+
     Adicionando tratamento de erros e parâmetros ao callback.
+
+    Aula - 04.05: Promises
+    Promise é um objeto que representa a conclussão de uma operação assíncrona, sendo ela com
+    exito ou falha.
+    Dessa maneira, podemos tratar o retorno / outcome da nossa espera de forma mais limpa e adequada.
+
+    Ao ser declarada, uma promise pode falhar ou ter êxito, nesses casos, ou ela foi rejeitada ou resolvida.
+    Montamos a promise com uma função que recebe "resolve" para êxito e "reject" para falha.
+
+    Fora do escopo de declaração, quando recebemos o retorno dessa promise, utilizamos o "then" para os sucessos
+    e "catch" para as falhas. (Existe também o "finally" que será executado em ambos os casos).
+
+    então temos...
+    Declaração:
+
+    function promessa(){
+        //Promise é um objeto, então temos que instancia-lo com
+        //a palavra reservada "new".
+        return new Promise((resolve, reject) => {
+            if(true)
+                resolve("Função resolvida com êxito!")    ;
+            else
+                reject(); //Sem valor = undefined
+        })
+    }
+
+    Chamada:
+    promessa().then((valor) => {console.log(valor)});
+    promessa().catch((valor) => {console.log("Droga, falhou!")});
+    promessa().finally((valor) => {console.log("Finalmente terminou...")});
 */
