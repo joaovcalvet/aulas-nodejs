@@ -83,4 +83,9 @@
         //Código que só sera executado depois do await
         console.log("Final da função");
     }
+
+    Aula - 04.08: Desafio e Tratamento de Exceções
+    Pequeno desafio consistindo em transformar um promise hell em algo ordenado com
+    await e async. De resto, uma pequena lição sobre tratar erros na resposta do
+    await.
 */

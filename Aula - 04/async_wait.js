@@ -43,3 +43,41 @@ function handle3(idade) {
 })();
 
 console.log("aconteceu depois");
+
+//-------------------------------------------------
+
+console.log("Inicio!");
+function pegarId() {
+    return new Promise((resolve, reject) => {
+        resolve(2);
+    });
+}
+
+function buscaEmailnoBanco(id) {
+    return new Promise((resolve, reject) => {
+        resolve("email@teste.com");
+    });
+}
+
+function enviarEmail(email) {
+    return new Promise((resolve, reject) => {
+        resolve("email enviado");
+    });
+}
+
+async function vai() {
+    var ID = await pegarId();
+    var email = await buscaEmailnoBanco(ID);
+
+    try {
+        var dale = await enviarEmail(email);
+    } catch (erro) {
+        console.log(erro);
+    }
+
+    console.log(dale);
+}
+
+vai();
+
+console.log("Fim!");
