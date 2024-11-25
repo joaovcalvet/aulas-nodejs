@@ -1,0 +1,16 @@
+{
+  "name": "oop_prog",
+  "version": "1.0.0",
+  "description": "Projetinho para estudar orientação a objetos no JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "test",
+    "aula",
+    "estudo"
+  ],
+  "author": "João Victor Calvet",
+  "license": "ISC"
+}
