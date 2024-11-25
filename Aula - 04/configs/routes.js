@@ -19,6 +19,7 @@ router.get("/", function(req, res){
 });
 
 router.get("/perguntar", question.index);
+router.get("/pergunta/:id", question.getQuestion);
 router.get("/perguntas", question.getAllQuestions);
 router.post("/perguntar", question.createQuestion);
 

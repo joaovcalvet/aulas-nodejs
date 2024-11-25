@@ -4,17 +4,37 @@ module.exports = {
     index: function(req, res) {
 
         let pageContent = {
-            page: "pages/perguntar.ejs",
+            page: "pages/question/perguntar.ejs",
             title: "Projeto Q&A - Perguntar"
         }
 
         return res.render("default.ejs", pageContent);
     },
 
+    getQuestion: function(req, res) {
+
+        let qID = req.params.id;
+        Question.findOne({
+            where: {id: qID}
+        }).then((question) => {
+
+            if(question === null)
+                return res.redirect("/perguntas");
+
+            let pageContent = {
+                page: "pages/question/pergunta.ejs",
+                title: "Projeto Q&A - Pergunta",
+                question: question
+            }
+
+            return res.render("default.ejs", pageContent);
+        });
+    },
+
     getAllQuestions: function(req, res) {
 
         let pageContent = {
-            page: "pages/perguntas.ejs",
+            page: "pages/question/perguntas.ejs",
             title: "Projeto Q&A - Perguntas"
         }
 
@@ -22,7 +42,6 @@ module.exports = {
                 raw:true, 
                 order: [['createdAt', 'DESC']]
             }).then((questions) => {
-                console.log(questions);
                 pageContent.questions = questions;
                 return res.render("default.ejs", pageContent);
         });

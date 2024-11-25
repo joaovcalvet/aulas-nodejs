@@ -97,6 +97,11 @@
 
     Aula - 04.11: Ordenação com Sequelize
     Ordernando pela pergunta mais recente.
+
+    Aula - 04.12: Criando Página para Pergunta
+    Crie uma nova página, além de uma nova rota e função no controller.
+    Utilizei o conceito de parâmetro na rota e uma query específica para um elemento.
+    Aproveitei para adicionar uma pasta a mais na estrutura das páginas.
 */
 
 const express = require('express'); //Importando o Express
