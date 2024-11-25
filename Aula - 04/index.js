@@ -59,5 +59,28 @@
     Promise.race
     Esse método também recebe um array com diversas funções que retornam promises,
     porém, o mesmo tem retorno no momento em que a primeira das funções contempladas
-    retornar.
+    retornar.´
+
+    Aula - 04.07: Async/Await
+    Maneira de escrever um código assíncrono de maneira síncrona.
+    Devemos primeiramente declarar funções que retornam promises.
+    Após isso, criamou uma função assíncrona com a palavra "async".
+    Executamos essa função e dentro dela esperamos a resposta das outras
+    funções utilizando o "await".
+
+    Exemplo:
+    function teste() {
+        return new Promise((resolve, reject) => {
+            console.log("teste")    
+        });
+    }
+
+    //Após isso, montamos a função assíncrona
+    async function handle() {
+        //Utilizamos o "await" para esperar o retorno da função.
+        var result = await teste();
+
+        //Código que só sera executado depois do await
+        console.log("Final da função");
+    }
 */
