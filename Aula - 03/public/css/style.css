@@ -1,0 +1,32 @@
+body {
+    background-color: rgb(23, 24, 61);
+}
+
+.site-navbar {
+    margin-bottom: 5vh;
+}
+
+.container-dark-mode .top-content {
+    color: white;
+}
+
+.container-dark-mode .top-content hr {
+    background-color: aliceblue;
+}
+
+.page-select {
+    display: flex;
+    gap: 24px;
+}
+
+.answer-container {
+    background-color: white;
+    padding: 1.25rem;
+    border-radius: .25rem;
+    margin-bottom: 20px;
+}
+
+.answer-container p {
+    margin: 0;
+    font-size: 20px;
+}

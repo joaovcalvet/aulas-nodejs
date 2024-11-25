@@ -1,0 +1,32 @@
+<div class="container container-dark-mode">
+    <div class="top-content">
+        <hr>
+        <h1><%- question.title %></h1>
+        <p><%- question.description %></p>
+        <hr>
+    </div>
+
+    <br>
+
+    <% if (answers != null) { %>
+        <% answers.forEach(answer => { %>
+            <div class="answer-container">
+                <p><%- answer.body %></p>
+            </div>
+        <% }) %>
+    <% } %>
+
+    <br>
+
+    <div class="card">
+        <div class="card-body">
+            <form action="/perguntar/resposta" method="post">
+                <label for="answer">Resposta</label>
+                <textarea name="answer" class="form-control" placeholder="Digite sua resposta aqui" required></textarea>
+                <input type="hidden" name="question_id" value="<%- question.id %>">
+                <br>
+                <button type="submit" class="btn btn-primary">Responder</button>
+            </form>
+        </div>
+    </div>
+</div>
