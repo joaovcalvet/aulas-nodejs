@@ -102,6 +102,8 @@
     Crie uma nova página, além de uma nova rota e função no controller.
     Utilizei o conceito de parâmetro na rota e uma query específica para um elemento.
     Aproveitei para adicionar uma pasta a mais na estrutura das páginas.
+
+    Aula - 04.13: Front-end Página de Pergunta
 */
 
 const express = require('express'); //Importando o Express
