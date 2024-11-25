@@ -1,12 +1,12 @@
 /*
-    Aula - 04: Plataforma de Perguntas e Respostas
+    Aula - 03: Plataforma de Perguntas e Respostas
     Primeiramente vamos instalar o EJS, que é uma biblioteca de templates HTML,
     ou seja, com ele, podemos renderizar HTML no backend e enviar para o Front.
     Ele tem a funcionalidade de adicionar lógica JavaScript ao HTML.
 
     Para instalar utilizamos o comando: "npm install ejs --save"
 
-    Aula - 04.2: Exibindo Variáveis no HTML
+    Aula - 03.2: Exibindo Variáveis no HTML
     Podemos renderizar variáveis no HTML utilizando o "EJS".
     Inicialmente, precisamos configurar o EJS como nosso motor de views padrão.
     Para isso utilizamos o método do express "set":
@@ -27,13 +27,13 @@
     <% (variável) %> - Para estruturas de controle (if, else, foreach);
     <%= (variável) %> - Para printar a variável no console ou página.
 
-    Aula - 04.3: Estruturas Condicionais
+    Aula - 03.3: Estruturas Condicionais
     If, else e else if
 
-    Aula - 04.4: Estrutura de Repetição
+    Aula - 03.4: Estrutura de Repetição
     Foreach
 
-    Aula - 04.5: Arquivos Estáticos
+    Aula - 03.5: Arquivos Estáticos
     Arquivos estáticos são aqueles são entregues ao client sem que sejam processados pelo backend.
     Ex: Javascript no HTML, imagens, CSS e etc...
 
@@ -44,7 +44,7 @@
     Estamos tornando esses arquivos publicos, ou seja, qualquer um terá acesso e poderá ver esses
     conteúdos, então, temos que ter cautela com o que vamos publicar.
 
-    Aula - 04.6: Bootstrap
+    Aula - 03.6: Bootstrap
     Bootstrap é um framework para HTML que auxilia na construção de páginas web.
     Ele ajuda na criação de interfaces rapidamente.
 
@@ -58,12 +58,12 @@
     P.S: Dependências passivo de mudança, verificar antes de subir.
     P.S: Ao usar estilos próprios, importa-los após o link com o bootstrap.
 
-    Aula - 04.7: Criando Formulário de Perguntas
+    Aula - 03.7: Criando Formulário de Perguntas
     Criando o formulário de perguntas no frontend com bootstrap.
     Transformando ele em um card.
     Ajeitando CSS.
 
-    Aula - 04.8: Partials
+    Aula - 03.8: Partials
     Partials nos permite fazer inclusões de snippets HTML em outros arquivos HTML.
     Dessa forma, conseguimos manter um código mais organizado e mais componentezado.
 
@@ -71,7 +71,7 @@
     Antes: <%- include partials/header.ejs %>
     Agora: <%- include('partials/header.ejs') %>
 
-    Aula - 04.8: Capturando Dados do Formulário
+    Aula - 03.8: Capturando Dados do Formulário
     Caapturar dados vindo do corpo da requisição.
     Foi instruido na aula a utilizar uma biblioteca separada, porém, após pesquisa
     descobri que essa biblioteca está defasada e que a mesma foi incorporada ao módulo
@@ -79,7 +79,7 @@
 
     Aproveitei também para reestruturar o projeto, separando em conceitos de rotas e controllers.
 
-    Aula - 04.9: Banco de Dados
+    Aula - 03.9: Banco de Dados
     Criando um banco de dados para armazenar as perguntas.
     Na aula, o professor utiliza MySQL para o banco, porém, estou usando sqlite para facilitar minha vida.
 
@@ -92,35 +92,35 @@
 
     Com o model, já estou conseguindo inserir itens no banco.
 
-    Aula - 04.10: Listando perguntas
+    Aula - 03.10: Listando perguntas
     Criado uma tela nova para listar todas as perguntas do banco.
 
-    Aula - 04.11: Ordenação com Sequelize
+    Aula - 03.11: Ordenação com Sequelize
     Ordernando pela pergunta mais recente.
 
-    Aula - 04.12: Criando Página para Pergunta
+    Aula - 03.12: Criando Página para Pergunta
     Crie uma nova página, além de uma nova rota e função no controller.
     Utilizei o conceito de parâmetro na rota e uma query específica para um elemento.
     Aproveitei para adicionar uma pasta a mais na estrutura das páginas.
 
-    Aula - 04.13: Front-end Página de Pergunta
+    Aula - 03.13: Front-end Página de Pergunta
     Pequenas alterações no Front da página de uma pergunta.
 
-    Aula - 04.14: Perguntas com Links Dinâmicos
+    Aula - 03.14: Perguntas com Links Dinâmicos
     Adicionado o Link para a página da Pergunta no botão "Responder".
 
-    Aula - 04.15: Model de Resposta
+    Aula - 03.15: Model de Resposta
     Criado o model para resposta.
     Ele fará uma ligação com o id de uma pergunta.
 
-    Aula - 04.16: Formulário de Resposta
+    Aula - 03.16: Formulário de Resposta
     Criado o formulário de resposta para as perguntas no frontend.
 
-    Aula - 04.17: Respondendo Perguntas
+    Aula - 03.17: Respondendo Perguntas
     Nova rota criada para tratar o envio de uma resposta.
     Resposta é armazenada no banco e linkada a pergunta associada.
 
-    Aula - 04.18: Exibindo Resposta no Front
+    Aula - 03.18: Exibindo Resposta no Front
     Criado a lógica para exibir as respostas no front.
     Para isso, buscamos no model todas as respostas com o id da pergunta,
     passamos para a view, que checa se alguma pergunta está sendo retornada.
