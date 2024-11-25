@@ -46,5 +46,18 @@
     Chamada:
     promessa().then((valor) => {console.log(valor)});
     promessa().catch((valor) => {console.log("Droga, falhou!")});
-    promessa().finally((valor) => {console.log("Finalmente terminou...")});
+    promessa().finally(() => {console.log("Finalmente terminou...")});
+
+    Aula - 04.06: Métodos extras Promise
+    Promises tem 2 métodos extras uteis.
+
+    Promise.all
+    Esse método recebe um array com diversas funções que retornam promises,
+    porém, os métodos then, catch e finally só retornam assim que TODAS as
+    funções terminarem de rodar.
+
+    Promise.race
+    Esse método também recebe um array com diversas funções que retornam promises,
+    porém, o mesmo tem retorno no momento em que a primeira das funções contempladas
+    retornar.
 */
