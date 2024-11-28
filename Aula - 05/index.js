@@ -27,4 +27,14 @@
     Cada instância pode ser "construida" com suas próprias variaveis, ou seja, cada
     instância é unica, não podendo acessar os atributos e métodos de outras instâncias
     mesmo que sendo da mesma classe.
+
+    Aula - 05.3: Construtor
+    Responsável por gerar a instância da classe memória.
+    Ele também facilita a definição de atributos.
+    O construtor é uma função, sendo assim, pode ser programado como tal.
+    Dentro dele, é declarado os atributos da classe.
+
+    constructor(titulo) {
+        this.titulo = titulo;
+    }
 */
