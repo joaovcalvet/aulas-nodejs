@@ -27,3 +27,10 @@ class Filme
 }
 
 var vingadores = new Filme();
+vingadores.Avancar();
+vingadores.ano = 2014;
+vingadores.genero = "ação";
+vingadores.titulo = "Vingadores 2";
+
+var batman = new Filme();
+batman.titulo = "Batman";

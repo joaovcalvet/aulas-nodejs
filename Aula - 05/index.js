@@ -20,6 +20,11 @@
     A classe pode ser entendida como uma forma, o objeto é o bolo feito.
     A classe é o blueprint para a criação do objeto.
 
-    Podemos instânciar um objeto (adicionar uma cópia da classe a memória) utilizando
+    Aula - 05.2: Atributos da Instância
+    Podemos instanciar uma classe (adicionar uma cópia da classe a memória) utilizando
     a palavra reservada "new".
+
+    Cada instância pode ser "construida" com suas próprias variaveis, ou seja, cada
+    instância é unica, não podendo acessar os atributos e métodos de outras instâncias
+    mesmo que sendo da mesma classe.
 */
