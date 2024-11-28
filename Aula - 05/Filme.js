@@ -2,7 +2,7 @@ class Filme
 {
     constructor(){
         this.titulo = "";
-        this.ano = 2000;
+        this.ano = 0;
         this.genero = "";
         this.diretor = "";
         this.atores = [];
@@ -25,3 +25,5 @@ class Filme
         console.log("Fechar X");
     }
 }
+
+var vingadores = new Filme();
