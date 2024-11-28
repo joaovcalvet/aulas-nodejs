@@ -37,4 +37,17 @@
     constructor(titulo) {
         this.titulo = titulo;
     }
+
+    Aula - 05.4: this e métodos estáticos
+    O this representa a instância da classe.
+    Métodos estáticos permitem que você acesse os mesmos sem precisar
+    criar uma instância dessa classe. Ou seja, basta chamar a classe.
+
+    Aula - 05.5: Desafio
+    O desafio consistia na criação de uma classe "Dado" que recebece
+    um inteiro e retorna-se um número aleatório entre 1 e o inteiro enviado.
 */
+let d = require('./Dado.js')
+
+let dado = new d(6);
+console.log(dado.Rolar());

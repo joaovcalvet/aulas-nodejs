@@ -24,6 +24,10 @@ class Filme
     Fechar(){
         console.log("Fechar X");
     }
+
+    Ficha(){
+        console.log(this.titulo);
+    }
 }
 
 var vingadores = new Filme("Vingadores", 2012, "Ação", "Alguem", "2h");
