@@ -9,4 +9,4 @@ class Dado
     }
 }
 
-module.exports = Dado;
+export default Dado;

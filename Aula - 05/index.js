@@ -46,8 +46,13 @@
     Aula - 05.5: Desafio
     O desafio consistia na criação de uma classe "Dado" que recebece
     um inteiro e retorna-se um número aleatório entre 1 e o inteiro enviado.
+
+    Aula - 05.6: Composição
+    "A arte de construir uma classe com outras classes."
 */
-let d = require('./Dado.js')
+import d from './Dado.js';
+import arq from './ManipuladorDeArquivos.js';
 
 let dado = new d(6);
 console.log(dado.Rolar());
+arq.Criador();
