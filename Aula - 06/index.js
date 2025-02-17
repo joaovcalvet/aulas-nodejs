@@ -17,12 +17,17 @@
     Aula - 06.3: Leitor/Escritor de JSON
     Converter plain/text vindo de um JSON para um objeto JavaScript
     Objeto JSON e Método "parse(texto)"
+
+    Aula - 06.4: CSV
+    Planilha onde as colunas são separadas por virgula
+
+    Aula - 06.5: Reader
 */
 
 import { asyncHandler } from "./Functions/general.js";
-import { reader, writer } from "./Functions/files.js";
+import { reader, writer, processCsv } from "./Functions/files.js";
 
-(async function run() {
+async function run() {
 
     var test = await asyncHandler(reader());
     var text = await asyncHandler(reader("./texto.txt"));
@@ -33,8 +38,16 @@ import { reader, writer } from "./Functions/files.js";
     console.log(json);
 
     json = JSON.parse(json);
-    json.nome = "Marcelo Mistake";
+    json.nome = "João Victor Calvet";
 
-    await asyncHandler(writer("./texto.txt", JSON.stringify(json)));
-    console.log(await asyncHandler(reader("./texto.txt")));
-})();
+    await asyncHandler(writer("./Storage/texto.txt", JSON.stringify(json)));
+    console.log(await asyncHandler(reader("./Storage/texto.txt")));
+};
+
+async function main() {
+    
+    let data = await asyncHandler(reader("./Storage/user.csv"));
+    let csv = processCsv(data);
+}
+
+main();
