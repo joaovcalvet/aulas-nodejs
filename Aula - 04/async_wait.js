@@ -26,6 +26,8 @@ function handle3(idade) {
 }
 
 (async function run() {
+    await vai();
+
     try {
         var result1 = await handle("jhon");
     } catch (error) {
@@ -68,6 +70,13 @@ function enviarEmail(email) {
 async function vai() {
     var ID = await pegarId();
     var email = await buscaEmailnoBanco(ID);
+    var algo = await function(){return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("algo retornado");
+        }, 4000);
+    })}()
+
+    console.log(algo);
 
     try {
         var dale = await enviarEmail(email);
@@ -77,7 +86,5 @@ async function vai() {
 
     console.log(dale);
 }
-
-vai();
 
 console.log("Fim!");
