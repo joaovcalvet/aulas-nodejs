@@ -1,1 +1,1 @@
-Novo texto enviado
+{"nome":"Marcelo Mistake","curso":"Formação Node.JS","categoria":"Node.js"}

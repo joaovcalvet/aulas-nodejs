@@ -13,19 +13,28 @@
     Aula - 06.2: Escrita em Arquivos
     Utilizando o módulo fs, vamos escrever em um arquivo.
     Método "writeFile('caminho do arquivo', 'Novo conteúdo a ser escrito', callback)";
+
+    Aula - 06.3: Leitor/Escritor de JSON
+    Converter plain/text vindo de um JSON para um objeto JavaScript
+    Objeto JSON e Método "parse(texto)"
 */
 
-import fs from "fs";
+import { asyncHandler } from "./Functions/general.js";
+import { reader, writer } from "./Functions/files.js";
 
-fs.writeFileSync("./texto.txt", "Novo texto enviado", function(erro) {
-    if(erro)
-        console.log("O que aconteceu aqui?: ", erro);
-});
+(async function run() {
 
-fs.readFile("./texto.txt", {encoding: 'utf-8'}, function(erro, dados) {
+    var test = await asyncHandler(reader());
+    var text = await asyncHandler(reader("./texto.txt"));
+    var json = await asyncHandler(reader("./user.json"));   
+    
+    console.log(test);
+    console.log(text);
+    console.log(json);
 
-    if(erro)
-        console.log("O que aconteceu aqui?: ", erro.message);
+    json = JSON.parse(json);
+    json.nome = "Marcelo Mistake";
 
-    console.log(dados);
-});
+    await asyncHandler(writer("./texto.txt", JSON.stringify(json)));
+    console.log(await asyncHandler(reader("./texto.txt")));
+})();
