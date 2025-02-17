@@ -49,6 +49,9 @@
 
     Aula - 05.6: Composição
     "A arte de construir uma classe com outras classes."
+
+    Aula - 05.7: Herança
+    Intuito de reutilizar código.
 */
 import d from './Dado.js';
 import arq from './ManipuladorDeArquivos.js';
@@ -56,3 +59,4 @@ import arq from './ManipuladorDeArquivos.js';
 let dado = new d(6);
 console.log(dado.Rolar());
 arq.Criador();
+arq.fazerIsso();

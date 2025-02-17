@@ -1,4 +1,10 @@
-export default class ManipuladorDeArquivos {
+class algo {
+    fazerIsso() {
+        console.log("to fazendo");
+    }
+}
+
+export default class ManipuladorDeArquivos extends algo{
 
     static Leitor() {
         console.log("Arquivo Lido");
