@@ -5,4 +5,14 @@ export default class Table
         this.header = fields.shift();
         this.rows = fields;
     }
+
+    get rowsCount()
+    {
+        return this.rows.length;
+    }
+
+    get columnsCount()
+    {
+        return this.header.length;
+    }
 }

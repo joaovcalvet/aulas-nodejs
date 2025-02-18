@@ -26,6 +26,13 @@
 
     Aula - 06.6: Table
     Montagem da classe "table"
+
+    Aula - 06.7: Campos Virtuais
+    Campos virtuais são uma forma de chamar um método de uma classe
+    como se fosse um field/atributo normalmente
+
+    Utiliza-se a palavra "get" antes do nome do método
+    (Métodos de campos virtuais sempre devem retornar algo)
 */
 
 import Table from "./Classes/Table.js";
@@ -56,6 +63,9 @@ async function main() {
 
     let table = new Table(csv);
     console.log(table);
+
+    console.log(table.columnsCount);
+    console.log(table.rowsCount);
 }
 
 main();
