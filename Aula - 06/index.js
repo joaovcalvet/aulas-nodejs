@@ -22,8 +22,13 @@
     Planilha onde as colunas são separadas por virgula
 
     Aula - 06.5: Reader
+    Montagem da função "reader"
+
+    Aula - 06.6: Table
+    Montagem da classe "table"
 */
 
+import Table from "./Classes/Table.js";
 import { asyncHandler } from "./Functions/general.js";
 import { reader, writer, processCsv } from "./Functions/files.js";
 
@@ -48,6 +53,9 @@ async function main() {
     
     let data = await asyncHandler(reader("./Storage/user.csv"));
     let csv = processCsv(data);
+
+    let table = new Table(csv);
+    console.log(table);
 }
 
 main();
