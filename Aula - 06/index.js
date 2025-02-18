@@ -35,15 +35,17 @@
     (Métodos de campos virtuais sempre devem retornar algo)
 */
 
+
 import Table from "./Classes/Table.js";
 import { asyncHandler } from "./Functions/general.js";
 import { reader, writer, processCsv } from "./Functions/files.js";
+import HtmlParser from "./Classes/HtmlParser/HtmlParser.js";
 
 async function run() {
 
     var test = await asyncHandler(reader());
-    var text = await asyncHandler(reader("./texto.txt"));
-    var json = await asyncHandler(reader("./user.json"));   
+    var text = await asyncHandler(reader("./Storage/texto.txt"));
+    var json = await asyncHandler(reader("./Storage/user.json"));   
     
     console.log(test);
     console.log(text);
@@ -58,6 +60,8 @@ async function run() {
 
 async function main() {
     
+    await run()
+
     let data = await asyncHandler(reader("./Storage/user.csv"));
     let csv = processCsv(data);
 
@@ -66,6 +70,9 @@ async function main() {
 
     console.log(table.columnsCount);
     console.log(table.rowsCount);
+
+    var html = await HtmlParser.Parser({header: table.header, body: table.rows});
+    console.log(html);
 }
 
 main();
