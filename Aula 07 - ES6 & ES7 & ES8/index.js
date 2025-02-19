@@ -27,6 +27,10 @@
 
     Aula 07.6: Operador Spread
     Maneira de copiar os atributos de um objeto, valor e nome
+
+    Aula 07.7: Desestruturação
+    A desestruturação é uma forma de recuperar atributos de um objeto e
+    transforma-los em variáveis já com valores.
 */
 
 const nome = "João";
@@ -114,3 +118,18 @@ var user = {
 
 console.log(empresa);
 console.log(user);
+// -------------------------------------------------
+
+var usuario = {
+    nome: "Jonas",
+    prof: "Programador",
+    empr: "Guia",
+    curso: "Formação Node.js"
+};
+
+ var { prof, empr, curso } = usuario;
+ console.log(prof);
+
+ // -------------------------------------------------
+
+ 
