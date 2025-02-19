@@ -39,12 +39,17 @@
     html. Para isso, é necessário ter um template base para a tabela.
 
     Aula - 06.9: Writer
+    Montagem da função "writer"
+
+    Aula - 06.10: PDFWriter
+    Montagem da função "PdfWriter", responsável por receber uma string e
+    devolver um arquivo pdf com o conteúdo passado.
 */
 
 
 import Table from "./Classes/Table.js";
 import { asyncHandler } from "./Functions/general.js";
-import { reader, writer, processCsv } from "./Functions/files.js";
+import { reader, writer, processCsv, WritePDF } from "./Functions/files.js";
 import HtmlParser from "./Classes/HtmlParser/HtmlParser.js";
 
 async function run() {
@@ -79,6 +84,7 @@ async function main() {
     console.log(html);
 
     writer("./" + Date.now() + " - minhaTabela.html", html);
+    WritePDF("./meuPDF.pdf", html);
 }
 
 main();

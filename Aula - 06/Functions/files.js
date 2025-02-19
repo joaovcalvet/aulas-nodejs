@@ -1,4 +1,5 @@
 import fs from "fs/promises";
+import pdf from "html-pdf";
 
 export async function reader(path = "")
 {
@@ -14,6 +15,11 @@ export async function writer(path = "", content = "")
         return Promise.reject("Nenhum documento selecionado");
 
     return fs.writeFile(path, content);
+}
+
+export function WritePDF(path, html)
+{
+    pdf.create(html, {}).toFile(path, err => err);
 }
 
 export function processCsv(data = null)
@@ -35,4 +41,4 @@ export function processCsv(data = null)
     return content;
 }
 
-export default { reader, writer, processCsv };
+export default { reader, writer, processCsv, WritePDF };
