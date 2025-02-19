@@ -40,6 +40,9 @@
     Aula 07.9: Find
     Encontra 1 unico registro dentro de um array.
     Sempre vai retornar o primeiro match
+
+    Aula 07.10: Template Literals
+    Concatena variáveis com strings
 */
 
 const nome = "João";
@@ -186,3 +189,10 @@ var user = users.find(user => user.salary < 2000);
 console.log(user);
 // -------------------------------------------------
 
+var nam1 = "Hugo";
+
+//Padrão
+console.log("Olá, meu nome é " + nam1);
+
+//Template Literal
+console.log(`Olá, meu nome é ${nam1}`);
