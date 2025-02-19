@@ -24,6 +24,9 @@
     não existe a necessidade de fazer a atribuição padrão.
 
     Ex: padrão - var varNome; var json = {nome: varNome}; | encurtado - var nome; var json = {nome};
+
+    Aula 07.6: Operador Spread
+    Maneira de copiar os atributos de um objeto, valor e nome
 */
 
 const nome = "João";
@@ -95,3 +98,19 @@ var json = {
 };
 
 console.log(json);
+// -------------------------------------------------
+
+var empresa = {
+    nome: "Empresa Teste",
+    cidade: "Rio de Janeiro",
+    site: "siteteste@gmail.com"
+};
+
+var user = {
+    username: "testeuser",
+    idade: 23,
+    ...empresa
+};
+
+console.log(empresa);
+console.log(user);
