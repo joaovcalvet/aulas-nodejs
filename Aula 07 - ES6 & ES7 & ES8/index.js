@@ -31,6 +31,11 @@
     Aula 07.7: Desestruturação
     A desestruturação é uma forma de recuperar atributos de um objeto e
     transforma-los em variáveis já com valores.
+
+    Aula 07.8: Arrow Function
+    Arrow Function nada mais é do que uma sintaxe diferente para escrever
+    funções. Utilizada para criar callbacks/funções anônimas e atribuir
+    funções a variáveis.
 */
 
 const nome = "João";
@@ -132,4 +137,24 @@ var usuario = {
 
  // -------------------------------------------------
 
- 
+ //Padrão
+function soma(a, b) {
+    console.log(a + b);
+}
+
+var mult = function(a, b) {
+    console.log(a * b);
+}
+
+//Arrow Function
+var div = (a, b) => {
+    console.log(a / b);
+}
+
+//Arrow Function com 1 parâmetro (oculta parênteses)
+var showResult = result => {
+    console.log(result);
+}
+
+//Arrow Function com retorno imediato (oculta chaves e return)
+var sub = (a, b) => console.log(a - b);
