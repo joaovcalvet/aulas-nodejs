@@ -18,6 +18,12 @@
 
     (Parâmetros opcionais sempre devem ser os ultimos na função)
     Ex: funcTeste(a, b, c = 30)
+
+    Aula 07.5: JSON encurtado
+    Caso o nome do atributo no objeto seja o mesmo de uma variável declarada,
+    não existe a necessidade de fazer a atribuição padrão.
+
+    Ex: padrão - var varNome; var json = {nome: varNome}; | encurtado - var nome; var json = {nome};
 */
 
 const nome = "João";
@@ -52,7 +58,6 @@ try {
 } catch (error) {
     console.log(error);
 }
-
 //------------------------------------------------
 
 if(true) {
@@ -70,8 +75,8 @@ try {
 } catch (error) {
     console.log(error);
 }
-
 //------------------------------------------------
+
 function soma(a, b = 10) {
     console.log(a + b);
 }
@@ -79,3 +84,14 @@ function soma(a, b = 10) {
 soma(10, 20);
 soma(10);
 soma();
+//------------------------------------------------
+
+var nomeEncurta = "Marta";
+var idade = 15;
+
+var json = {
+    nome: nomeEncurta,
+    idade
+};
+
+console.log(json);
