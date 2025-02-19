@@ -33,6 +33,12 @@
 
     Utiliza-se a palavra "get" antes do nome do método
     (Métodos de campos virtuais sempre devem retornar algo)
+
+    Aula - 06.8: HTMLParser
+    Classe responsável por transformar dados passados em uma tabela
+    html. Para isso, é necessário ter um template base para a tabela.
+
+    Aula - 06.9: Writer
 */
 
 
@@ -59,8 +65,6 @@ async function run() {
 };
 
 async function main() {
-    
-    await run()
 
     let data = await asyncHandler(reader("./Storage/user.csv"));
     let csv = processCsv(data);
@@ -73,6 +77,8 @@ async function main() {
 
     var html = await HtmlParser.Parser({header: table.header, body: table.rows});
     console.log(html);
+
+    writer("./" + Date.now() + " - minhaTabela.html", html);
 }
 
 main();

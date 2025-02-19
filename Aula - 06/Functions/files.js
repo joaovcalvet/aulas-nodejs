@@ -2,7 +2,6 @@ import fs from "fs/promises";
 
 export async function reader(path = "")
 {
-
     if(path == "")
         return Promise.reject("Nenhum documento selecionado");
 
@@ -11,7 +10,6 @@ export async function reader(path = "")
 
 export async function writer(path = "", content = "")
 {
-
     if(path == "")
         return Promise.reject("Nenhum documento selecionado");
 
@@ -20,7 +18,6 @@ export async function writer(path = "", content = "")
 
 export function processCsv(data = null)
 {
-
     if(data == null)
         return new Error("Nenhuma informação passada para processamento");
 
