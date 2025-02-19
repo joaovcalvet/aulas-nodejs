@@ -1,0 +1,19 @@
+<table>
+    <thead>
+        <tr>
+            <% header.forEach(col => { %>
+                <th><%- col %></th>
+            <% }) %>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% body.forEach(row => { %>
+            <tr>
+                <% row.forEach(field => { %>
+                    <td><%= field %></td>
+                <% }) %>
+            </tr>
+        <% }) %>
+    </tbody>
+</table>

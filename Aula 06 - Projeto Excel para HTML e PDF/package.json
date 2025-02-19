@@ -1,0 +1,19 @@
+{
+  "name": "aula---06",
+  "version": "1.0.0",
+  "description": "Projeto Conversor de Excel para PDF ou HTML",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "test"
+  ],
+  "author": "João Victor Calvet",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "html-pdf": "^3.0.1"
+  }
+}
