@@ -36,6 +36,10 @@
     Arrow Function nada mais é do que uma sintaxe diferente para escrever
     funções. Utilizada para criar callbacks/funções anônimas e atribuir
     funções a variáveis.
+
+    Aula 07.9: Find
+    Encontra 1 unico registro dentro de um array.
+    Sempre vai retornar o primeiro match
 */
 
 const nome = "João";
@@ -132,12 +136,11 @@ var usuario = {
     curso: "Formação Node.js"
 };
 
- var { prof, empr, curso } = usuario;
- console.log(prof);
+var { prof, empr, curso } = usuario;
+console.log(prof);
+// -------------------------------------------------
 
- // -------------------------------------------------
-
- //Padrão
+//Padrão
 function soma(a, b) {
     console.log(a + b);
 }
@@ -158,3 +161,28 @@ var showResult = result => {
 
 //Arrow Function com retorno imediato (oculta chaves e return)
 var sub = (a, b) => console.log(a - b);
+// -------------------------------------------------
+
+var user1 = {
+    name: "Victor",
+    age: 32,
+    salary: 1500
+};
+
+var user2 = {
+    name: "John",
+    age: 23,
+    salary: 2000
+};
+
+var user3 = {
+    name: "Julia",
+    age: 40,
+    salary: 1800
+};
+
+var users = [user1, user2, user3];
+var user = users.find(user => user.salary < 2000);
+console.log(user);
+// -------------------------------------------------
+
