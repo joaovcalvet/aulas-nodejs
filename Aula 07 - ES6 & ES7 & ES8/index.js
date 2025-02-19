@@ -9,7 +9,15 @@
 
     Aula 07.3: Variáveis Let
     Forma de declarar uma variável onde sua declaração também
-    depende do escopo de bloco.
+    depende do escopo de bloco.´
+
+    Aula 07.4: Parâmetros Opcionais
+    Podemos em funções, criar parâmetros que já possuem um valor pré definido,
+    dessa forma, caso o usuário não passe um valor explicito para aquele parâmetro,
+    ele utilizará o valor default
+
+    (Parâmetros opcionais sempre devem ser os ultimos na função)
+    Ex: funcTeste(a, b, c = 30)
 */
 
 const nome = "João";
@@ -62,3 +70,12 @@ try {
 } catch (error) {
     console.log(error);
 }
+
+//------------------------------------------------
+function soma(a, b = 10) {
+    console.log(a + b);
+}
+
+soma(10, 20);
+soma(10);
+soma();
